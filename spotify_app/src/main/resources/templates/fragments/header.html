@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:fragment="include-head">
+	
+		<title>My app</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" ></meta>
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"></meta>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+		<link rel="stylesheet" th:href="@{/css/main.css}" href="../../css/main.css" ></link>
+	
+	</th:block>
+</head>
+<body>
+	<th:block th:fragment="include-menu">
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" th:href="@{/home}">My app</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li class="active"><a th:href="@{/home}">Home</a></li>
+					<li class="active"><a th:href="@{/load-categories}">Categories</a></li>
+					<li class="active"><a th:href="@{/load-new-releases}">New Releases</a></li>
+					<li class="active"><a th:href="@{/load-featured-playlists}">Featured Playlists</a></li>
+				</ul>
+			</div>
+		</nav>
+	</th:block>
+</body>
+</html>

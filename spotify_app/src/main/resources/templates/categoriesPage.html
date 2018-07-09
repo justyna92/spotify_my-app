@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:replace="fragments/header :: include-head"/>
+</head>
+<body>
+	
+	<th:block th:replace="fragments/header :: include-menu"/>
+	
+
+	<div class="container container-height">
+		<div class="starter-template">
+			<th:block th:if="${error} != null">
+				<h2 th:text="${error}"></h2>
+			</th:block>
+			<th:block th:unless="${error} != null">
+				<h2 class = "text-center">Categories</h2>
+				<th:block th:each="category : ${categoriesList}">
+				    <div class = "tiles">
+				    	<div th:text="${category.name}" class = "tiles-inside text-center"></div>
+						<form th:action="@{/categories/{categoryid}(categoryid=${category.id})}" method="post">
+						    <input type="hidden" name="categoryid" th:value="${category.id}"/>
+						    <button type="submit" class = "hide-button-behind-img">
+						    	<img th:src="${category.getIcons()[0].url}"/>
+						    </button>
+						</form>
+				    </div>
+				    
+				</th:block>
+				
+				
+				
+			</th:block>
+		</div>
+	</div>
+
+<th:block th:replace="fragments/footer :: include-footer" />
+
+</body>
+</html>

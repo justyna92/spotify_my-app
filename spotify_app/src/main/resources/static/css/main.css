@@ -1,0 +1,31 @@
+.tiles {
+	display: inline-block;
+	margin: 25px 25px 25px 25px;
+	
+}
+
+.tiles-inside {
+	display: block;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.hide-button-behind-img {
+	border: 0; 
+	background: transparent;
+}
+
+.footer {
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	bottom: 5px;
+	height: 35px;
+}
+
+
+
+
+
